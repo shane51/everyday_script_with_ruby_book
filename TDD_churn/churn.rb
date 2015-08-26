@@ -21,3 +21,12 @@ end
 def header(a_time)
   a_time.strftime("Changes since %Y-%m-%d:")
 end
+
+def subsystem_line(subsystem_name, change_count)
+	asterisks = asterisks_for(change_count)
+	"#{subsystem_name.rjust(14)} #{asterisks} (#{change_count})"
+end
+
+def asterisks_for(change_count)
+	'*' * ( change_count / 5 )
+end
